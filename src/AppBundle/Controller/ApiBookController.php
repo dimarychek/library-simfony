@@ -38,6 +38,7 @@ class ApiBookController extends FOSRestController
         if ($restData === null) {
             return new View("Book not found", Response::HTTP_NOT_FOUND);
         }
+
         return $restData;
     }
 
@@ -92,12 +93,12 @@ class ApiBookController extends FOSRestController
         $book = $this->getDoctrine()->getRepository('BookBundle:Book')->find($id);
 
         if (empty($book)) {
-            return new View("book not found", Response::HTTP_NOT_FOUND);
+            return new View("Book not found", Response::HTTP_NOT_FOUND);
         } else {
             $manager->remove($book);
             $manager->flush();
         }
 
-        return new View("deleted successfully", Response::HTTP_OK);
+        return new View("Book deleted successfully", Response::HTTP_OK);
     }
 }
