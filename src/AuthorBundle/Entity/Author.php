@@ -42,6 +42,8 @@ class Author
         $this->books = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+
+
     /**
      * Get id
      *
@@ -108,5 +110,29 @@ class Author
     public function getBooks()
     {
         return $this->books;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAuthor()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return (string) $this->name;
+    }
+
+    /**
+     * @return int
+     */
+    public function getBookCount()
+    {
+        return $this->books->count();
     }
 }

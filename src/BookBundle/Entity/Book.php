@@ -31,7 +31,6 @@ class Book
     /**
      * @var int
      *
-     * @ORM\Column(name="author_id", type="integer")
      * @ORM\ManyToOne(targetEntity="\AuthorBundle\Entity\Author", inversedBy="books")
      * @ORM\JoinColumn(name="author_id", referencedColumnName="id")
      */
