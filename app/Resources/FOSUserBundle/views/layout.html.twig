@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container" style="height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <h3>Registration</h3>
+        <br>
+        <div>
+            {% block fos_user_content %}{% endblock %}
+        </div>
+    </div>
+{% endblock %}

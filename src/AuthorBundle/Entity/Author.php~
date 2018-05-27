@@ -35,6 +35,14 @@ class Author
 
 
     /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->books = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
      * Get id
      *
      * @return int
@@ -67,5 +75,62 @@ class Author
     {
         return $this->name;
     }
-}
 
+    /**
+     * Add book
+     *
+     * @param \BookBundle\Entity\Book $book
+     *
+     * @return Author
+     */
+    public function addBook(\BookBundle\Entity\Book $book)
+    {
+        $this->books[] = $book;
+
+        return $this;
+    }
+
+    /**
+     * Remove book
+     *
+     * @param \BookBundle\Entity\Book $book
+     */
+    public function removeBook(\BookBundle\Entity\Book $book)
+    {
+        $this->books->removeElement($book);
+    }
+
+    /**
+     * Get books
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getBooks()
+    {
+        return $this->books;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAuthor()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return (string) $this->name;
+    }
+
+    /**
+     * @return int
+     */
+    public function getBookCount()
+    {
+        return $this->books->count();
+    }
+}

@@ -71,14 +71,38 @@ class Book
         return $this->name;
     }
 
+//    /**
+//     * Set authorId
+//     *
+//     * @param integer $authorId
+//     *
+//     * @return Book
+//     */
+//    public function setAuthorId($authorId)
+//    {
+//        $this->authorId = $authorId;
+//
+//        return $this;
+//    }
+//
+//    /**
+//     * Get authorId
+//     *
+//     * @return int
+//     */
+//    public function getAuthorId()
+//    {
+//        return $this->authorId;
+//    }
+
     /**
      * Set authorId
      *
-     * @param integer $authorId
+     * @param \AuthorBundle\Entity\Author $authorId
      *
      * @return Book
      */
-    public function setAuthorId($authorId)
+    public function setAuthorId(\AuthorBundle\Entity\Author $authorId)
     {
         $this->authorId = $authorId;
 
@@ -88,7 +112,7 @@ class Book
     /**
      * Get authorId
      *
-     * @return int
+//     * @return \AuthorBundle\Entity\Author
      */
     public function getAuthorId()
     {
